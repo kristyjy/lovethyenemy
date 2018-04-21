@@ -12,28 +12,28 @@ const state = {
 }
 
 const getters = {
-  getPlayerName(state) {
+  getAIName(state) {
     return state.name;
   },
-  getPlayerDeck(state) {
+  getAIDeck(state) {
     return state.deck;
   },
-  getPlayerHand(state) {
+  getAIHand(state) {
     return state.hand;
   },
-  getPlayerStats(state) {
+  getAIStats(state) {
     return state.stats;
   }
 }
 
 const actions = {
-  setPlayerHero({commit}, hero) {
-    commit('setPlayerHero', hero);
+  setAIHero({commit}, hero) {
+    commit('setAIHero', hero);
   }
 }
 
 const mutations = {
-  setPlayerHero(state, hero) {
+  setAIHero(state, hero) {
     state.name = hero.name;
     if (hero.fantasy) {
       state.stats.fantasy = hero.fantasy;

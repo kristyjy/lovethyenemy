@@ -54,7 +54,7 @@ const actions = {
 
 const mutations = {
   removeHero(state, hero) {
-    state.heroes = state.hero.filter((item) => {
+    state.heroes = state.heroes.filter((item) => {
       if (item.name !== hero.name)
         return item;
     });
