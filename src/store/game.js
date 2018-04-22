@@ -4,7 +4,55 @@ const state = {
   aiScore: 0,
   goal: 69,
   turn: 'player',
-  round: 1
+  round: 1,
+  villains: [
+    {
+      name: 'Vampire',
+      goth: 6,
+      fantasy: 2
+    },
+    {
+      name: 'Minotaur',
+      fantasy: 8
+    },
+    {
+      name: 'Kid Next Door',
+      realism: 5
+    },
+    {
+      name: "Devil",
+      fantasy: 4,
+      goth: 4
+    },
+    {
+      name: "Evil Starship Captain",
+      scifi: 6
+    },
+    {
+      name: "The Opposing Basketball Team",
+      realism: 7
+    },
+    {
+      name: "Evil CEO",
+      realism: 4,
+      scifi: 4
+    },
+    {
+      name: "Serial Killer",
+      realism: 9
+    },
+    {
+      name: "Super Villain",
+      fantasy: 3,
+      scifi: 3,
+      realism: 3
+    },
+    {
+      name: "Witch",
+      fantasy: 6
+    }
+  ],
+  currentVillains: []
 }
 
 const getters = {
@@ -39,6 +87,9 @@ const getters = {
   },
   hasAIWon(state) {
     return state.aiScore >= state.goal;
+  },
+  getCurrentVillains(state) {
+    return state.currentVillains;
   }
 }
 
@@ -48,6 +99,12 @@ const actions = {
   },
   nextStep({commit}) {
     commit('nextStep');
+  },
+  shuffleVillains({commit}) {
+    commit('shuffleVillains');
+  },
+  drawVillains({commit}) {
+    commit('drawVillains');
   }
 }
 
@@ -66,6 +123,16 @@ const mutations = {
   },
   nextStep(state) {
     state.step = state.step + 1;
+  },
+  shuffleVillains() {
+    state.villains = _.shuffle(state.villains);
+  },
+  drawVillains(state) {
+    let number = 3 - state.currentVillains.length;
+    if (number) {
+      state.currentVillains = _.concat(state.currentVillains, _.take(state.villains, number));
+      state.villains = _.slice(state.villains, number, state.villains.length)
+    }
   }
 }
 

@@ -23,12 +23,17 @@ export default {
     ...mapActions([
       'setHero',
       'removeHeroFromOptions',
+      'shuffleDeck',
+      'shuffleVillains',
       'nextStep'
     ]),
     selectHero(hero) {
       this.setHero({hero, player: playerType.PLAYER});
       this.removeHeroFromOptions(hero);
       this.setHero({hero: this.getRandomHero , player: playerType.AI});
+      this.shuffleDeck(playerType.PLAYER);
+      this.shuffleDeck(playerType.AI);
+      this.shuffleVillains();
       this.nextStep();
     }
   }

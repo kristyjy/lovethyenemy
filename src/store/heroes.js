@@ -34,26 +34,31 @@ const state = {
       deck: [
         {
           title: '+1 Fantasy',
+          id: 'super1',
           type: types.GENRE,
           fantasy: 1
         },
         {
           title: '+1 Sci-fi',
+          id: 'super2',
           type: types.GENRE,
           scifi: 1
         },
         {
           title: '+1 Realism',
+          id: 'super3',
           type: types.GENRE,
           realism: 1
         },
         {
           title: '+1 Gothic',
+          id: 'super4',
           type: types.GENRE,
           goth: 1
         },
         {
           title: '+1 Fantasy, +1 Sci-fi, +1 Realism',
+          id: 'super5',
           type: types.GENRE,
           fantasy: 1,
           scifi: 1,
@@ -61,6 +66,7 @@ const state = {
         },
         {
           title: '+1 Fantasy, +1 Sci-fi, +1 Realism',
+          id: 'super6',
           type: types.GENRE,
           fantasy: 1,
           scifi: 1,
@@ -68,11 +74,13 @@ const state = {
         },
         {
           title: 'Aquire Random Card',
+          id: 'super7',
           type: types.ACTION,
           action: 'random'
         },
         {
           title: '-1 Gothic from opponent',
+          id: 'super8',
           type: types.ACTION,
           opponent: {
             goth: -1
@@ -86,41 +94,49 @@ const state = {
       deck: [
         {
           title: '+1 Fantasy',
+          id: 'vamphun1',
           type: types.GENRE,
           fantasy: 1
         },
         {
           title: '+1 Sci-fi',
+          id: 'vamphun2',
           type: types.GENRE,
           scifi: 1
         },
         {
           title: '+1 Realism',
+          id: 'vamphun3',
           type: types.GENRE,
           realism: 1
         },
         {
           title: '+1 Gothic',
+          id: 'vamphun4',
           type: types.GENRE,
           goth: 1
         },
         {
-          title: '+3 Goth',
+          title: '+3 Gothic',
+          id: 'vamphun5',
           type: types.GENRE,
           goth: 3
         },
         {
-          title: '+1 Fantasy, +1 Sci-fi, +1 Realism',
+          title: '+3 Gothic',
+          id: 'vamphun6',
           type: types.GENRE,
           goth: 3
         },
         {
           title: 'Aquire Random Card',
+          id: 'vamphun7',
           type: types.ACTION,
           action: 'random'
         },
         {
           title: '-1 Fantasy, -1 Sci-fi, -1 Realism from opponent',
+          id: 'vamphun8',
           type: types.ACTION,
           opponent: {
             fantasy: -1,
