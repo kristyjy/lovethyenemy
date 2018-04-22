@@ -3,8 +3,8 @@ const state = {
   playerScore: 0,
   aiScore: 0,
   goal: 69,
-  turn: '',
-  round: 0
+  turn: 'player',
+  round: 1
 }
 
 const getters = {
@@ -53,7 +53,7 @@ const actions = {
 
 const mutations = {
   setNextTurn(state) {
-    if (state.turn === '' || state.turn === 'seduce') {
+    if (state.turn === 'seduce') {
       state.turn = 'player';
       state.round = state.round + 1;
     }

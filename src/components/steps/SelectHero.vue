@@ -9,6 +9,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import * as playerType from '../../constants/players';
 
 export default {
   name: 'GameBoard',
@@ -20,15 +21,14 @@ export default {
   },
   methods: {
     ...mapActions([
-      'setPlayerHero',
+      'setHero',
       'removeHeroFromOptions',
-      'setAIHero',
       'nextStep'
     ]),
     selectHero(hero) {
-      this.setPlayerHero(hero);
+      this.setHero({hero, player: playerType.PLAYER});
       this.removeHeroFromOptions(hero);
-      this.setAIHero(this.getRandomHero);
+      this.setHero({hero: this.getRandomHero , player: playerType.AI});
       this.nextStep();
     }
   }

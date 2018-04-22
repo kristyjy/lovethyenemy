@@ -4,7 +4,7 @@
       <SelectHero />
     </div>
     <div v-else-if="getCurrentStep === 2" class="play-game">
-      Start game
+      <Game />
     </div>
     <div v-else class="win-game">Game Over</div>
   </div>
@@ -13,11 +13,13 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import SelectHero from './steps/SelectHero.vue';
+import Game from './steps/Game.vue';
 
 export default {
   name: 'GameBoard',
   components: {
-    SelectHero
+    SelectHero,
+    Game
   },
   computed: {
     ...mapGetters([
